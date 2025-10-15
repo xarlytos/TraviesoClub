@@ -126,7 +126,7 @@ function App() {
             </div>
 
             <h2 className="text-vintage text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-[#2E6930] leading-tight font-bold mb-6 uppercase tracking-wider relative z-10">
-              Manifiesto Travieso
+              ¿Qué es Travieso?
             </h2>
 
             <div className="flex justify-center mb-14">
