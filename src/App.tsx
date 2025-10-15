@@ -112,7 +112,7 @@ function App() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="slide-up bg-white/60 backdrop-blur-xl p-16 md:p-20 rounded-[3rem] shadow-3xl border-4 border-[#2E6930]/30 relative overflow-hidden group hover:shadow-4xl transition-all duration-500 hover:scale-[1.02]">
+          <div className="slide-up bg-white/60 backdrop-blur-xl p-8 sm:p-12 md:p-16 lg:p-20 rounded-[2rem] sm:rounded-[3rem] shadow-3xl border-4 border-[#2E6930]/30 relative overflow-hidden group hover:shadow-4xl transition-all duration-500 hover:scale-[1.02]">
             {/* Shimmer effect on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#2E6930]/5 via-transparent to-[#2E6930]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -125,7 +125,7 @@ function App() {
               </div>
             </div>
 
-            <h2 className="text-vintage text-4xl md:text-5xl lg:text-6xl text-center text-[#2E6930] leading-tight font-bold mb-6 uppercase tracking-wider relative z-10">
+            <h2 className="text-vintage text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-[#2E6930] leading-tight font-bold mb-6 uppercase tracking-wider relative z-10">
               Manifiesto Travieso
             </h2>
 
@@ -133,11 +133,11 @@ function App() {
               <div className="w-24 h-1.5 bg-[#2E6930] rounded-full"></div>
             </div>
 
-            <p className="text-vintage text-2xl md:text-3xl lg:text-4xl text-center text-[#2E6930] leading-relaxed font-bold relative z-10 mb-8">
+            <p className="text-vintage text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-[#2E6930] leading-relaxed font-bold relative z-10 mb-8">
               No nos tomamos la noche demasiado en serio, pero sí sabemos cómo pasarlo bien.
             </p>
 
-            <p className="text-vintage text-xl md:text-2xl lg:text-3xl text-center text-[#2E6930]/80 leading-relaxed font-semibold relative z-10">
+            <p className="text-vintage text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-center text-[#2E6930]/80 leading-relaxed font-semibold relative z-10">
               Aquí se mezcla el champán con las risas, el estilo con un ambiente travieso
               y la buena gente con las malas intenciones.
             </p>
