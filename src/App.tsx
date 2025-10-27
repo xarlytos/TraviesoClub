@@ -119,20 +119,20 @@ function App() {
       </section>
 
       {/* Main Text Section */}
-      <section className="relative py-32 md:py-40 px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-8">
-          <div className="slide-up space-y-8 px-4">
+      <section className="relative py-16 md:py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center space-y-6">
+          <div className="slide-up space-y-6 px-4">
             <h1 className="text-vintage text-4xl md:text-6xl lg:text-7xl leading-tight text-[#2E6930] font-bold drop-shadow-lg">
               Travieso no es la típica fiesta que hacen dos pijos,
               <span className="block text-5xl md:text-7xl lg:text-8xl mt-4 bg-gradient-to-r from-[#2E6930] via-[#4a8f4c] to-[#2E6930] bg-clip-text text-transparent animate-gradient">somos tres.</span>
             </h1>
 
-            <p className="text-vintage text-3xl md:text-4xl lg:text-5xl text-[#2E6930] font-bold mt-8">
+            <p className="text-vintage text-3xl md:text-4xl lg:text-5xl text-[#2E6930] font-bold mt-6">
               Y por eso sale mejor.
             </p>
 
             {/* Subtitle */}
-            <div className="flex items-center justify-center gap-4 mt-8">
+            <div className="flex items-center justify-center gap-4 mt-6">
               <div className="h-px w-12 md:w-24 bg-gradient-to-r from-transparent to-[#2E6930]"></div>
               <p className="text-xl md:text-2xl text-[#2E6930] font-bold tracking-wide uppercase">
                 El caos más elegante de Valencia
@@ -144,7 +144,7 @@ function App() {
       </section>
 
       {/* Manifiesto Section */}
-      <section className="relative py-32 md:py-40 px-6 parallax-bg">
+      <section className="relative py-16 md:py-20 px-6 parallax-bg">
         {/* Parallax background */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#F5F2E9] via-[#F0EDE4] to-[#F5F2E9] opacity-50"></div>
         
@@ -157,12 +157,12 @@ function App() {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="slide-up bg-white/60 backdrop-blur-xl p-8 sm:p-12 md:p-16 lg:p-20 rounded-[2rem] sm:rounded-[3rem] shadow-3xl border-4 border-[#2E6930]/30 relative overflow-hidden group hover:shadow-4xl transition-all duration-500 hover:scale-[1.02]">
+          <div className="slide-up bg-white/60 backdrop-blur-xl p-6 sm:p-8 md:p-12 lg:p-16 rounded-[2rem] sm:rounded-[3rem] shadow-3xl border-4 border-[#2E6930]/30 relative overflow-hidden group hover:shadow-4xl transition-all duration-500 hover:scale-[1.02]">
             {/* Shimmer effect on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#2E6930]/5 via-transparent to-[#2E6930]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
 
-            <div className="flex justify-center mb-10">
+            <div className="flex justify-center mb-6">
               <div className="flex items-center gap-3">
                 <div className="h-1 w-16 bg-gradient-to-r from-transparent to-[#2E6930] rounded-full"></div>
                 <Sparkles className="w-8 h-8 text-[#2E6930]/60 animate-pulse" />
@@ -170,15 +170,15 @@ function App() {
               </div>
             </div>
 
-            <h2 className="text-vintage text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-[#2E6930] leading-tight font-bold mb-6 uppercase tracking-wider relative z-10">
+            <h2 className="text-vintage text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center text-[#2E6930] leading-tight font-bold mb-4 uppercase tracking-wider relative z-10">
               ¿Qué es Travieso?
             </h2>
 
-            <div className="flex justify-center mb-14">
+            <div className="flex justify-center mb-8">
               <div className="w-24 h-1.5 bg-[#2E6930] rounded-full"></div>
             </div>
 
-            <p className="text-vintage text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-[#2E6930] leading-relaxed font-bold relative z-10 mb-8">
+            <p className="text-vintage text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-center text-[#2E6930] leading-relaxed font-bold relative z-10 mb-6">
               No nos tomamos la noche demasiado en serio, pero sí sabemos cómo pasarlo bien.
             </p>
 
@@ -188,7 +188,7 @@ function App() {
             </p>
 
             {/* Decorative element */}
-            <div className="flex justify-center mt-14 gap-6 items-center">
+            <div className="flex justify-center mt-8 gap-6 items-center">
               <div className="w-3 h-3 rounded-full bg-[#2E6930]/40 animate-pulse"></div>
               <img
                 src="/imagen/WhatsApp Image 2025-10-15 at 23.43.40.jpeg"
@@ -208,7 +208,7 @@ function App() {
       </section>
 
       {/* Final Section */}
-      <section className="relative py-32 md:py-40 px-6 overflow-hidden">
+      <section className="relative py-16 md:py-20 px-6 overflow-hidden">
         {/* Enhanced confetti background */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-10 left-[10%] w-3 h-3 bg-[#2E6930]/10 rounded-full animate-confetti-dense"></div>

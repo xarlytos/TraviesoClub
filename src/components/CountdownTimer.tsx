@@ -52,18 +52,18 @@ export default function CountdownTimer({ targetDate, eventTitle, eventLocation }
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
       <div className="relative">
-        <div className="w-20 h-20 md:w-24 md:h-24 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border-4 border-[#2E6930]/30 group hover:scale-110 transition-all duration-300">
-          <span className="text-3xl md:text-4xl font-bold text-[#2E6930] font-mono">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center shadow-2xl border-2 sm:border-4 border-[#2E6930]/30 group hover:scale-110 transition-all duration-300">
+          <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2E6930] font-mono">
             {value.toString().padStart(2, '0')}
           </span>
           {/* Flip animation effect */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2E6930]/10 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#2E6930]/10 to-transparent rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
         {/* Floating sparkles around numbers */}
-        <Sparkles className="absolute -top-2 -right-2 w-4 h-4 text-[#2E6930]/40 animate-pulse-slow" />
-        <Sparkles className="absolute -bottom-2 -left-2 w-3 h-3 text-[#2E6930]/30 animate-pulse-slower" />
+        <Sparkles className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-3 h-3 sm:w-4 sm:h-4 text-[#2E6930]/40 animate-pulse-slow" />
+        <Sparkles className="absolute -bottom-1 -left-1 sm:-bottom-2 sm:-left-2 w-2 h-2 sm:w-3 sm:h-3 text-[#2E6930]/30 animate-pulse-slower" />
       </div>
-      <span className="text-sm md:text-base font-bold text-[#2E6930] mt-2 uppercase tracking-wider">
+      <span className="text-xs sm:text-sm md:text-base font-bold text-[#2E6930] mt-1 sm:mt-2 uppercase tracking-wider">
         {label}
       </span>
     </div>
@@ -114,13 +114,13 @@ export default function CountdownTimer({ targetDate, eventTitle, eventLocation }
               <PartyPopper className="w-12 h-12 text-[#2E6930] animate-bounce" style={{animationDelay: '0.5s'}} />
             </div>
           ) : (
-            <div className="flex justify-center items-center gap-4 md:gap-8 flex-wrap">
+            <div className="flex justify-center items-center gap-2 sm:gap-4 md:gap-8 flex-wrap">
               <TimeUnit value={timeLeft.days} label="Días" />
-              <div className="text-3xl md:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
               <TimeUnit value={timeLeft.hours} label="Horas" />
-              <div className="text-3xl md:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
               <TimeUnit value={timeLeft.minutes} label="Min" />
-              <div className="text-3xl md:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
+              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
               <TimeUnit value={timeLeft.seconds} label="Seg" />
             </div>
           )}
