@@ -70,23 +70,18 @@ export default function CountdownTimer({ targetDate, eventTitle, eventLocation }
   );
 
   return (
-    <div className="relative py-20 px-6 bg-gradient-to-b from-[#F5F2E9] to-[#F0EDE4] overflow-hidden">
-      {/* Background texture */}
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.7' /%3E%3C/svg%3E")`,
-      }}></div>
-
+    <div className="relative py-8 px-6">
       {/* Floating decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-[5%] w-3 h-3 bg-[#2E6930]/20 rounded-full animate-bubble"></div>
-        <div className="absolute top-20 right-[10%] w-2 h-2 bg-[#2E6930]/15 rounded-full animate-bubble-delayed"></div>
-        <div className="absolute bottom-20 left-[15%] w-2.5 h-2.5 bg-[#2E6930]/20 rounded-full animate-bubble-slow"></div>
-        <div className="absolute bottom-10 right-[20%] w-3 h-3 bg-[#2E6930]/15 rounded-full animate-bubble"></div>
+        <div className="absolute top-5 left-[5%] w-2 h-2 bg-[#2E6930]/20 rounded-full animate-bubble"></div>
+        <div className="absolute top-10 right-[10%] w-1.5 h-1.5 bg-[#2E6930]/15 rounded-full animate-bubble-delayed"></div>
+        <div className="absolute bottom-10 left-[15%] w-2 h-2 bg-[#2E6930]/20 rounded-full animate-bubble-slow"></div>
+        <div className="absolute bottom-5 right-[20%] w-1.5 h-1.5 bg-[#2E6930]/15 rounded-full animate-bubble"></div>
         
-        {/* Floating glasses */}
-        <Sparkles className="absolute top-1/4 left-[8%] w-6 h-6 text-[#2E6930]/10 animate-float" />
-        <Sparkles className="absolute top-1/3 right-[12%] w-5 h-5 text-[#2E6930]/10 animate-float-delayed" />
-        <Sparkles className="absolute bottom-1/3 left-[18%] w-7 h-7 text-[#2E6930]/10 animate-float" />
+        {/* Floating sparkles */}
+        <Sparkles className="absolute top-1/4 left-[8%] w-4 h-4 text-[#2E6930]/10 animate-float" />
+        <Sparkles className="absolute top-1/3 right-[12%] w-3 h-3 text-[#2E6930]/10 animate-float-delayed" />
+        <Sparkles className="absolute bottom-1/3 left-[18%] w-5 h-5 text-[#2E6930]/10 animate-float" />
       </div>
 
       {/* Confetti effect when expired */}
@@ -108,20 +103,6 @@ export default function CountdownTimer({ targetDate, eventTitle, eventLocation }
       )}
 
       <div className="max-w-6xl mx-auto text-center">
-        {/* Title */}
-        <div className="slide-up mb-12">
-          <h2 className="text-vintage text-3xl md:text-4xl lg:text-5xl text-[#2E6930] font-bold mb-4">
-            {isExpired ? '¡Es hoy! 🍾🔥' : 'Próxima travesura en…'}
-          </h2>
-          <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-12 md:w-24 bg-gradient-to-r from-transparent to-[#2E6930]"></div>
-            <p className="text-lg md:text-xl text-[#2E6930] font-bold tracking-wide">
-              {eventTitle} — {eventLocation}
-            </p>
-            <div className="h-px w-12 md:w-24 bg-gradient-to-l from-transparent to-[#2E6930]"></div>
-          </div>
-        </div>
-
         {/* Countdown Timer */}
         <div className="slide-up">
           {isExpired ? (

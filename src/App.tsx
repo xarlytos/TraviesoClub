@@ -41,7 +41,7 @@ function App() {
         <Glasses className="absolute bottom-1/4 right-[25%] w-6 h-6 text-[#2E6930]/10 animate-float-delayed" />
       </div>
 
-      {/* Hero Section */}
+      {/* Hero Section with Countdown */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-12">
         {/* Animated light rays */}
         <div className="absolute inset-0 overflow-hidden opacity-10">
@@ -49,9 +49,9 @@ function App() {
           <div className="absolute top-0 right-1/3 w-1 h-full bg-gradient-to-b from-transparent via-[#2E6930] to-transparent animate-light-ray-delayed"></div>
         </div>
 
-        <div className={`max-w-5xl mx-auto text-center space-y-12 ${isVisible ? 'fade-in' : 'opacity-0'}`}>
+        <div className={`max-w-6xl mx-auto text-center space-y-8 ${isVisible ? 'fade-in' : 'opacity-0'}`}>
           {/* Indiana X Travieso Title */}
-          <div className="slide-up mb-8">
+          <div className="slide-up mb-6">
             <h1 className="text-vintage text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold tracking-widest uppercase">
               INDIANA X TRAVIESO
             </h1>
@@ -63,40 +63,42 @@ function App() {
           </div>
 
           {/* Logo with animation */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8">
             <div className={`relative group transition-all duration-500 hover:scale-105 ${logoWink ? 'wink' : ''}`}>
               <div className="absolute inset-0 bg-[#2E6930]/20 rounded-full blur-3xl group-hover:blur-4xl transition-all duration-500 animate-pulse-gentle"></div>
               <img
                 src="/imagen/WhatsApp Image 2025-10-15 at 23.43.40.jpeg"
                 alt="Travieso Club Logo"
-                className="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full drop-shadow-2xl hover:drop-shadow-3xl transition-all duration-500"
+                className="relative w-40 h-40 md:w-48 md:h-48 object-cover rounded-full drop-shadow-2xl hover:drop-shadow-3xl transition-all duration-500"
               />
             </div>
           </div>
 
-          {/* Main Headline */}
-          <div className="space-y-8 px-4">
-            <h1 className="text-vintage text-4xl md:text-6xl lg:text-7xl leading-tight text-[#2E6930] font-bold drop-shadow-lg">
-              Travieso no es la típica fiesta que hacen dos pijos,
-              <span className="block text-5xl md:text-7xl lg:text-8xl mt-4 bg-gradient-to-r from-[#2E6930] via-[#4a8f4c] to-[#2E6930] bg-clip-text text-transparent animate-gradient">somos tres.</span>
-            </h1>
-
-            <p className="text-vintage text-3xl md:text-4xl lg:text-5xl text-[#2E6930] font-bold mt-8">
-              Y por eso sale mejor.
-            </p>
-
-            {/* Subtitle */}
-            <div className="flex items-center justify-center gap-4 mt-8">
+          {/* Event Info */}
+          <div className="slide-up mb-8">
+            <h2 className="text-vintage text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold mb-4">
+              Próxima travesura en…
+            </h2>
+            <div className="flex items-center justify-center gap-4">
               <div className="h-px w-12 md:w-24 bg-gradient-to-r from-transparent to-[#2E6930]"></div>
-              <p className="text-xl md:text-2xl text-[#2E6930] font-bold tracking-wide uppercase">
-                El caos más elegante de Valencia
+              <p className="text-lg md:text-xl text-[#2E6930] font-bold tracking-wide">
+                13.11.25 — Valencia
               </p>
               <div className="h-px w-12 md:w-24 bg-gradient-to-l from-transparent to-[#2E6930]"></div>
             </div>
           </div>
 
+          {/* Countdown Timer */}
+          <div className="slide-up mb-8">
+            <CountdownTimer 
+              targetDate="2025-11-13T00:00:00" 
+              eventTitle="13.11.25" 
+              eventLocation="Valencia" 
+            />
+          </div>
+
           {/* CTA Button */}
-          <div className="pt-12">
+          <div className="slide-up pt-8">
             <a
               href="https://www.fourvenues.com/traviesoclub"
               target="_blank"
@@ -116,12 +118,30 @@ function App() {
         </div>
       </section>
 
-      {/* Countdown Section */}
-      <CountdownTimer 
-        targetDate="2025-11-13T00:00:00" 
-        eventTitle="13.11.25" 
-        eventLocation="Valencia" 
-      />
+      {/* Main Text Section */}
+      <section className="relative py-32 md:py-40 px-6">
+        <div className="max-w-5xl mx-auto text-center space-y-8">
+          <div className="slide-up space-y-8 px-4">
+            <h1 className="text-vintage text-4xl md:text-6xl lg:text-7xl leading-tight text-[#2E6930] font-bold drop-shadow-lg">
+              Travieso no es la típica fiesta que hacen dos pijos,
+              <span className="block text-5xl md:text-7xl lg:text-8xl mt-4 bg-gradient-to-r from-[#2E6930] via-[#4a8f4c] to-[#2E6930] bg-clip-text text-transparent animate-gradient">somos tres.</span>
+            </h1>
+
+            <p className="text-vintage text-3xl md:text-4xl lg:text-5xl text-[#2E6930] font-bold mt-8">
+              Y por eso sale mejor.
+            </p>
+
+            {/* Subtitle */}
+            <div className="flex items-center justify-center gap-4 mt-8">
+              <div className="h-px w-12 md:w-24 bg-gradient-to-r from-transparent to-[#2E6930]"></div>
+              <p className="text-xl md:text-2xl text-[#2E6930] font-bold tracking-wide uppercase">
+                El caos más elegante de Valencia
+              </p>
+              <div className="h-px w-12 md:w-24 bg-gradient-to-l from-transparent to-[#2E6930]"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Manifiesto Section */}
       <section className="relative py-32 md:py-40 px-6 parallax-bg">
