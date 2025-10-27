@@ -221,11 +221,6 @@ function App() {
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
           {/* Enhanced warning badge */}
-          <div className="slide-up flex justify-center mt-16 mb-16">
-            <div className="inline-flex items-center gap-3 bg-[#2E6930] text-[#F5F2E9] px-8 py-4 rounded-full text-lg md:text-xl font-bold shadow-2xl animate-pulse-gentle border-4 border-[#1a3f1c]">
-              <span>Si vas a portarte bien… este no es tu sitio 😈</span>
-            </div>
-          </div>
 
           <div className="slide-up space-y-10">
             <p className="text-vintage text-3xl md:text-4xl lg:text-5xl text-[#2E6930] leading-tight font-bold px-4 drop-shadow-lg">

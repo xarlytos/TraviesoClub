@@ -50,8 +50,8 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
       <div className="relative">
-        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-2xl border-2 sm:border-3 border-[#2E6930]/40 group hover:scale-110 transition-all duration-300">
-          <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#2E6930] font-mono">
+        <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center shadow-2xl border-2 sm:border-3 border-[#2E6930]/40 group hover:scale-110 transition-all duration-300">
+          <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#2E6930] font-mono">
             {value.toString().padStart(2, '0')}
           </span>
           {/* Flip animation effect */}
@@ -112,13 +112,13 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
               <PartyPopper className="w-12 h-12 text-[#2E6930] animate-bounce" style={{animationDelay: '0.5s'}} />
             </div>
           ) : (
-            <div className="flex justify-center items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 flex-nowrap overflow-x-auto px-2">
+            <div className="flex justify-center items-center gap-1.5 sm:gap-2.5 md:gap-3.5 lg:gap-5 flex-wrap px-1">
               <TimeUnit value={timeLeft.days} label="Días" />
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#2E6930] font-bold animate-pulse">:</div>
               <TimeUnit value={timeLeft.hours} label="Horas" />
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#2E6930] font-bold animate-pulse">:</div>
               <TimeUnit value={timeLeft.minutes} label="Min" />
-              <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold animate-pulse">:</div>
+              <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-[#2E6930] font-bold animate-pulse">:</div>
               <TimeUnit value={timeLeft.seconds} label="Seg" />
             </div>
           )}
