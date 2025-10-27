@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Ticket, Glasses, Sparkles, Camera, ChevronDown, PartyPopper } from 'lucide-react';
+import CountdownTimer from './components/CountdownTimer';
+import CursorTrail from './components/CursorTrail';
 
 function App() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,7 +20,8 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#F5F2E9] relative overflow-hidden cursor-travieso">
+    <CursorTrail>
+      <div className="min-h-screen bg-[#F5F2E9] relative overflow-hidden cursor-trail">
       {/* Enhanced paper texture overlay */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' /%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.7' /%3E%3C/svg%3E")`,
@@ -47,6 +50,18 @@ function App() {
         </div>
 
         <div className={`max-w-5xl mx-auto text-center space-y-12 ${isVisible ? 'fade-in' : 'opacity-0'}`}>
+          {/* Indiana X Travieso Title */}
+          <div className="slide-up mb-8">
+            <h1 className="text-vintage text-2xl md:text-3xl lg:text-4xl text-[#2E6930] font-bold tracking-widest uppercase">
+              INDIANA X TRAVIESO
+            </h1>
+            <div className="flex items-center justify-center gap-4 mt-4">
+              <div className="h-px w-16 md:w-24 bg-gradient-to-r from-transparent to-[#2E6930]"></div>
+              <div className="w-2 h-2 bg-[#2E6930] rounded-full animate-pulse"></div>
+              <div className="h-px w-16 md:w-24 bg-gradient-to-l from-transparent to-[#2E6930]"></div>
+            </div>
+          </div>
+
           {/* Logo with animation */}
           <div className="flex justify-center mb-12">
             <div className={`relative group transition-all duration-500 hover:scale-105 ${logoWink ? 'wink' : ''}`}>
@@ -86,7 +101,7 @@ function App() {
               href="https://www.fourvenues.com/traviesoclub"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 bg-[#2E6930] text-[#F5F2E9] px-12 py-6 rounded-full text-xl md:text-2xl font-bold transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:-translate-y-2 group relative overflow-hidden border-4 border-[#2E6930] hover:border-[#1a3f1c]"
+              className="inline-flex items-center gap-4 bg-[#2E6930] text-[#F5F2E9] px-12 py-6 rounded-full text-xl md:text-2xl font-bold transition-all duration-300 hover:shadow-2xl hover:scale-110 hover:-translate-y-2 group relative overflow-hidden border-4 border-[#2E6930] hover:border-[#1a3f1c] button-heartbeat"
             >
               <Ticket className="w-7 h-7 group-hover:rotate-12 transition-transform relative z-10" />
               <span className="relative z-10">Compra tus entradas</span>
@@ -101,8 +116,18 @@ function App() {
         </div>
       </section>
 
+      {/* Countdown Section */}
+      <CountdownTimer 
+        targetDate="2025-11-13T00:00:00" 
+        eventTitle="13.11.25" 
+        eventLocation="Valencia" 
+      />
+
       {/* Manifiesto Section */}
-      <section className="relative py-32 md:py-40 px-6">
+      <section className="relative py-32 md:py-40 px-6 parallax-bg">
+        {/* Parallax background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#F5F2E9] via-[#F0EDE4] to-[#F5F2E9] opacity-50"></div>
+        
         {/* Floating decorative icons */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Glasses className="absolute top-10 left-[5%] w-8 h-8 text-[#2E6930]/5 animate-bubble" />
@@ -164,20 +189,21 @@ function App() {
 
       {/* Final Section */}
       <section className="relative py-32 md:py-40 px-6 overflow-hidden">
-        {/* Confetti background */}
+        {/* Enhanced confetti background */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 left-[10%] w-3 h-3 bg-[#2E6930]/10 rounded-full animate-confetti"></div>
-          <div className="absolute top-20 right-[15%] w-2 h-2 bg-[#2E6930]/10 rounded-full animate-confetti-delayed"></div>
-          <div className="absolute bottom-1/3 left-[25%] w-2.5 h-2.5 bg-[#2E6930]/10 rounded-full animate-confetti-slow"></div>
-          <div className="absolute top-1/3 right-[20%] w-3 h-3 bg-[#2E6930]/10 rounded-full animate-confetti"></div>
-          <div className="absolute bottom-20 right-[30%] w-2 h-2 bg-[#2E6930]/10 rounded-full animate-confetti-delayed"></div>
+          <div className="absolute top-10 left-[10%] w-3 h-3 bg-[#2E6930]/10 rounded-full animate-confetti-dense"></div>
+          <div className="absolute top-20 right-[15%] w-2 h-2 bg-[#2E6930]/10 rounded-full animate-confetti-dense" style={{animationDelay: '1s'}}></div>
+          <div className="absolute bottom-1/3 left-[25%] w-2.5 h-2.5 bg-[#2E6930]/10 rounded-full animate-confetti-dense" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-1/3 right-[20%] w-3 h-3 bg-[#2E6930]/10 rounded-full animate-confetti-dense" style={{animationDelay: '0.5s'}}></div>
+          <div className="absolute bottom-20 right-[30%] w-2 h-2 bg-[#2E6930]/10 rounded-full animate-confetti-dense" style={{animationDelay: '1.5s'}}></div>
+          <div className="absolute top-1/2 left-[40%] w-2 h-2 bg-[#2E6930]/10 rounded-full animate-confetti-dense" style={{animationDelay: '3s'}}></div>
         </div>
 
         <div className="max-w-4xl mx-auto text-center space-y-6">
-          {/* Warning badge */}
-          <div className="slide-up flex justify-center mb-6">
+          {/* Enhanced warning badge */}
+          <div className="slide-up flex justify-center mt-16 mb-16">
             <div className="inline-flex items-center gap-3 bg-[#2E6930] text-[#F5F2E9] px-8 py-4 rounded-full text-lg md:text-xl font-bold shadow-2xl animate-pulse-gentle border-4 border-[#1a3f1c]">
-              <span>Si vas a portarte bien… este no es tu sitio</span>
+              <span>Si vas a portarte bien… este no es tu sitio 😈</span>
             </div>
           </div>
 
@@ -201,7 +227,7 @@ function App() {
               href="https://www.fourvenues.com/traviesoclub"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 bg-[#2E6930] text-[#F5F2E9] px-10 py-5 rounded-full text-xl font-bold transition-all duration-300 hover:shadow-3xl hover:scale-110 hover:-translate-y-2 w-full sm:w-auto justify-center group relative overflow-hidden border-4 border-[#2E6930] hover:border-[#1a3f1c]"
+              className="inline-flex items-center gap-4 bg-[#2E6930] text-[#F5F2E9] px-10 py-5 rounded-full text-xl font-bold transition-all duration-300 hover:shadow-3xl hover:scale-110 hover:-translate-y-2 w-full sm:w-auto justify-center group relative overflow-hidden border-4 border-[#2E6930] hover:border-[#1a3f1c] button-vibrate"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
               <Ticket className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform" />
@@ -212,12 +238,41 @@ function App() {
               href="https://www.instagram.com/traviesoclub_?igsh=M28wYzBvYTZmb2Rx"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-4 bg-white text-[#2E6930] px-10 py-5 rounded-full text-xl font-bold border-4 border-[#2E6930] transition-all duration-300 hover:shadow-3xl hover:scale-110 hover:-translate-y-2 w-full sm:w-auto justify-center group relative overflow-hidden hover:bg-[#2E6930] hover:text-[#F5F2E9]"
+              className="inline-flex items-center gap-4 bg-white text-[#2E6930] px-10 py-5 rounded-full text-xl font-bold border-4 border-[#2E6930] transition-all duration-300 hover:shadow-3xl hover:scale-110 hover:-translate-y-2 w-full sm:w-auto justify-center group relative overflow-hidden hover:bg-[#2E6930] hover:text-[#F5F2E9] button-instagram"
             >
               <span className="absolute inset-0 bg-[#2E6930] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               <Camera className="w-6 h-6 relative z-10 group-hover:rotate-12 transition-transform" />
               <span className="relative z-10">Síguenos en Instagram</span>
             </a>
+          </div>
+
+          {/* Location Map */}
+          <div className="slide-up mt-16">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border-4 border-[#2E6930]/30 max-w-4xl mx-auto">
+              <h3 className="text-vintage text-xl md:text-2xl text-[#2E6930] font-bold text-center mb-6 uppercase tracking-wider">
+                📍 ¿Dónde nos encontramos?
+              </h3>
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://maps.google.com/maps?q=C%2F+de+Sant+Vicent+M%C3%A0rtir%2C+95%2C+Extramurs%2C+46004+Val%C3%A8ncia%2C+España&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ubicación Travieso Club"
+                ></iframe>
+              </div>
+              <div className="mt-4 text-center">
+                <p className="text-[#2E6930] font-bold text-lg">
+                  C/ de Sant Vicent Màrtir, 95
+                </p>
+                <p className="text-[#2E6930]/80 font-semibold">
+                  Extramurs, 46004 València
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -227,14 +282,12 @@ function App() {
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <div className="h-px bg-gradient-to-r from-transparent via-[#F5F2E9]/30 to-transparent w-full max-w-md mx-auto"></div>
           <p className="text-[#F5F2E9] text-base md:text-lg font-bold">
-            © 2025 Travieso Club®
-          </p>
-          <p className="text-[#F5F2E9]/80 text-sm md:text-base font-medium italic">
-            Para los que saben que portarse bien... aburre.
+            © 2025 Travieso Club®. Para los que saben que portarse bien… aburre. 🐊
           </p>
         </div>
       </footer>
     </div>
+    </CursorTrail>
   );
 }
 

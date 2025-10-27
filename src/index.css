@@ -269,4 +269,72 @@
   .animate-gradient {
     animation: gradient 3s ease infinite;
   }
+
+  /* Countdown specific animations */
+  @keyframes confetti-explosion {
+    0% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-300px) rotate(720deg) scale(0.5);
+      opacity: 0;
+    }
+  }
+
+  .animate-confetti-explosion {
+    animation: confetti-explosion 3s ease-out forwards;
+  }
+
+  /* Enhanced cursor trail effect */
+  .cursor-trail {
+    cursor: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='12' cy='12' r='8' fill='%232E6930' opacity='0.8'/%3E%3Ccircle cx='12' cy='12' r='4' fill='%23F5F2E9'/%3E%3C/svg%3E") 12 12, auto;
+  }
+
+  /* Smooth scroll enhancement */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+  }
+
+  /* Parallax effect */
+  .parallax-bg {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Enhanced button animations */
+  .button-heartbeat:hover {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Instagram button glow effect */
+  .button-instagram:hover {
+    box-shadow: 0 0 20px rgba(46, 105, 48, 0.4);
+  }
+
+  /* Enhanced confetti for final section */
+  @keyframes confetti-dense {
+    0% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.1;
+    }
+    100% {
+      transform: translateY(-400px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-confetti-dense {
+    animation: confetti-dense 6s ease-in-out infinite;
+  }
 }
